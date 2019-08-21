@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+const logo = require('../assets/logo.png');
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-newsfeed';
+  currentTime = new Date().toUTCString();
+  logoImage = logo;
 }
