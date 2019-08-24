@@ -1,0 +1,246 @@
+body{
+    background-color: #f8f7f7a1;
+}
+
+/* toolbar - START*/
+.toolbar{
+    background-color: #efefef !important;
+}
+
+.toolbar-icon {
+    padding: 0 14px;
+    font-size: 30px;
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+/* toolbar - END*/
+
+/* Home Page - START*/
+.news-container{
+    background-color: #f6f5f5;
+}
+
+.ad-container{
+    max-width: 800px;
+    height: 200px;
+    background-color: #e0e0e0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.app-card {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-image{
+    height: 400px;
+    background-image: url('https://ichef.bbci.co.uk/news/660/cpsprodpb/11E93/production/_108336337_mediaitem108336330.jpg');
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.news-header-image {
+    background-image: url('https://www.coastalprotectioncore.com/wp-content/uploads/avatars/470/5b517aeb400f9-bpfull.jpg');
+    background-size: cover;
+}
+
+.news-input{
+    width: 100%;
+}
+
+.toolbar{
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+}
+
+.news-container{
+    padding-bottom: 4%; 
+}
+
+.news-input-container{
+    padding-bottom: 4%;
+}
+
+.textarea-container{
+    /*background-color: #f6f5f5;*/
+}
+
+.input-button-row{
+    height: 35px;
+    margin-top: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.input-hashtag-row{
+    height: 35px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.button-margin-left{
+    margin-left: 4px;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+.clear-both{
+    clear: both;
+}
+
+.news-input-field-ccontainer{
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.input-card-hello-text{
+    font-size: 22px;
+    color: #8c8787;
+    margin-left: 15px;
+}
+
+.time-container{
+    font-size: 14px;
+    color: #cbcbcb;
+    margin-top: 2px;
+}
+
+.icon-time{
+    color: orange;
+    padding-left: 0px !important;
+    padding-right: 2px !important;
+    font-size: 20px;
+}
+
+.icon-favorite{
+    color: palevioletred;
+    padding-right: 10px !important;
+    margin-top: -4px;
+}
+
+.news-heading{
+    font-size: 16.5px;
+    font-weight: 400;
+}
+
+.news-content{
+    font-size: 14.5px;
+    font-weight: 300;
+}
+
+.width-header{
+    width: 100%;
+}
+
+.like-count{
+    color: palevioletred;
+    font-size: 16px;
+    margin-left: 22px;
+    margin-top: -2px;
+}
+
+.news-card{
+    padding: 25px;
+    margin-bottom: 4%;
+}
+
+.color-white{
+    color: white;
+}
+
+.color-orange{
+    color: orange;
+}
+
+.color-grey{
+    color:#9c9394;
+}
+
+.text-justify{
+    text-align: justify
+}
+
+.like-container{
+    margin-top: 10px;
+}
+
+.logo-image{
+    width: 240px;
+}
+
+.header-news-portal{
+    height: 66px;
+    line-height: 66px;
+    margin-left: 10px;
+}
+
+.anchor-hook{
+    font-size: 12.5px;
+    margin-right: 12px;
+    margin-left: 12px;
+    display: inline;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.anchor-list{
+    background-color: #f44336;
+    width:100%;
+    height: 40px !important;
+}
+
+.site-list{
+    width: 100%;
+    background-color: #343333;
+    color: #e0e0e0;
+    height: 40px
+}
+
+.site-hook{
+    font-size: 12.5px;
+    margin-right: 12px;
+    margin-left: 12px;
+    display: inline;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.logo-container{
+    height: 70px;
+}
+
+.outlet-container{
+    padding-top: 200px;
+}
+
+.author-title{
+    margin-bottom: 6px !important;
+    font-weight: 400 !important;
+}
+
+.author-content{
+    font-weight: 300 !important;
+}
+
+.font-weight-style{
+    font-weight: 300 !important;
+}
+
+.font-weight-style-medium{
+    font-weight: 400 !important;
+}
+/* Home Page - END*/

@@ -1,0 +1,155 @@
+<div class="outlet-container">
+    <div class="news-container">
+        <div class="news-input-container">
+            <mat-card class="app-card input-card">
+                <div class="input-card-hello-text">
+                    <span class="welcome font-weight-style">Hello User! Whats hot today?</span>
+                    <div class="time-container">
+                        <div class="float-left">
+                            <mat-icon class="toolbar-icon icon-time font-weight-style" aria-hidden="false"
+                                aria-label="Example account icon">
+                                query_builder
+                            </mat-icon>
+                        </div>
+                        <div class="time float-left font-weight-style">{{ currentTime }}</div>
+                    </div>
+                </div>
+
+                <div class="news-input-field-ccontainer">
+                    <mat-form-field class="news-input">
+                        <mat-label>Select news category</mat-label>
+                        <mat-select>
+                            <mat-option value="media">Media</mat-option>
+                            <mat-option value="world">world</mat-option>
+                            <mat-option value="box office">box office</mat-option>
+                            <mat-option value="sports">sports</mat-option>
+                            <mat-option value="tourism">tourism</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="news-input">
+                        <input matInput placeholder="Enter the news heading here" />
+                    </mat-form-field>
+
+                    <mat-form-field class="news-input">
+                        <textarea matInput class="textarea-container" placeholder="Enter the news here"></textarea>
+                    </mat-form-field>
+                </div>
+
+                <div class="input-hashtag-row">
+                    <div class="float-left">
+                        <mat-chip-list aria-label="Popular Hashtags">
+                            <mat-chip class="font-weight-style-medium">#tourism</mat-chip>
+                            <mat-chip class="font-weight-style-medium">#worldpeace</mat-chip>
+                            <mat-chip class="font-weight-style-medium">#olympia</mat-chip>
+                            <mat-chip class="font-weight-style-medium">#monsoon</mat-chip>
+                        </mat-chip-list>
+                    </div>
+                </div>
+
+                <div class="input-button-row">
+                    <div class="button-container float-right">
+                        <button mat-raised-button color="primary" class="font-weight-style" matTooltip="post news">Send</button>
+                        <button class="button-margin-left" mat-icon-button matTooltip="upload a file" color="accent"
+                            aria-label="Example icon-button with a attach file">
+                            <mat-icon>attach_file</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-card>
+            <div class="clear-both"></div>
+        </div>
+
+        <mat-card class="app-card news-card">
+            <div class="width-header">
+                <mat-card-header class="float-left">
+                    <div mat-card-avatar class="news-header-image"></div>
+                    <mat-card-title class="author-title">John Doe</mat-card-title>
+                    <mat-card-subtitle class="author-content">Senior media representative at Ohio</mat-card-subtitle>
+                    <div class="clear-both"></div>
+                </mat-card-header>
+
+                <div class="like-container float-right">
+                    <mat-icon class="toolbar-icon icon-favorite float-left" aria-hidden="false"
+                        aria-label="Example favorite icon">
+                        favorite
+                    </mat-icon>
+                    <div class="like-count float-left">31</div>
+                </div>
+            </div>
+
+            <div class="clear-both"></div>
+            <div class="news-image"></div><br />
+
+            <mat-card-content>
+                <div class="news-heading">US President Donald Trump has cancelled a state visit to Denmark after the
+                    nation's
+                    prime minister said Greenland was not for sale to the US.</div><br />
+                <div class="news-content text-justify">
+                    Danish PM Mette Frederiksen described the suggestion as "absurd" and said she hoped Mr Trump was not
+                    being
+                    serious.<br />
+                    Announcing the cancellation of his visit, Mr Trump tweeted: "Denmark is a very special country with
+                    incredible
+                    people, but based on Prime Minister Mette Frederiksen's comments, that she would have no interest in
+                    discussing
+                    the purchase of Greenland, I will be postponing our meeting scheduled in two weeks for another
+                    time...."<br />
+                    The Danish royal house also confirmed it had been informed of the cancellation, the Danish
+                    Broadcasting
+                    Corporation, DR, reported.
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button mat-raised-button color="primary" class="font-weight-style">LIKE</button>
+                <button mat-button mat-raised-button color="accent" class="color-white font-weight-style">SHARE</button>
+            </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="app-card news-card">
+            <div class="width-header">
+                <mat-card-header class="float-left">
+                    <div mat-card-avatar class="news-header-image"></div>
+                    <mat-card-title class="author-title">John Doe</mat-card-title>
+                    <mat-card-subtitle class="author-content">Senior media representative at Ohio</mat-card-subtitle>
+                    <div class="clear-both"></div>
+                </mat-card-header>
+
+                <div class="like-container float-right">
+                    <mat-icon class="toolbar-icon icon-favorite float-left" aria-hidden="false"
+                        aria-label="Example favorite icon">
+                        favorite
+                    </mat-icon>
+                    <div class="like-count float-left">31</div>
+                </div>
+            </div>
+
+            <div class="clear-both"></div>
+            <div class="news-image"></div><br />
+
+            <mat-card-content>
+                <div class="news-heading">US President Donald Trump has cancelled a state visit to Denmark after the
+                    nation's
+                    prime minister said Greenland was not for sale to the US.</div><br />
+                <div class="news-content text-justify">
+                    Danish PM Mette Frederiksen described the suggestion as "absurd" and said she hoped Mr Trump was not
+                    being
+                    serious.<br />
+                    Announcing the cancellation of his visit, Mr Trump tweeted: "Denmark is a very special country with
+                    incredible
+                    people, but based on Prime Minister Mette Frederiksen's comments, that she would have no interest in
+                    discussing
+                    the purchase of Greenland, I will be postponing our meeting scheduled in two weeks for another
+                    time...."<br />
+                    The Danish royal house also confirmed it had been informed of the cancellation, the Danish
+                    Broadcasting
+                    Corporation, DR, reported.
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button mat-raised-button color="primary" class="font-weight-style">LIKE</button>
+                <button mat-button mat-raised-button color="accent" class="color-white font-weight-style">SHARE</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

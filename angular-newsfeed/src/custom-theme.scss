@@ -13,7 +13,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $angular-newsfeed-primary: mat-palette($mat-red);
-$angular-newsfeed-accent: mat-palette($mat-orange);
+$angular-newsfeed-accent: mat-palette($mat-grey);
 
 // The warn palette is optional (defaults to red).
 $angular-newsfeed-warn: mat-palette($mat-red);

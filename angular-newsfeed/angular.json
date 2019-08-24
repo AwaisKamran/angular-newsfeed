@@ -25,9 +25,12 @@
             ],
             "styles": [
               "src/custom-theme.scss",
-              "src/styles.css"
+              "src/styles.css",
+              "src/vendor/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/vendor/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -1,0 +1,185 @@
+.outlet-container{
+    padding-top: 200px;
+}
+
+.popular-news > .news-block-image-mini{
+    width: 65px;
+    height: 65px;
+    background-image: url(https://source.unsplash.com/user/erondu/1600x900);
+    background-color: grey;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.popular-news > .old-block-image-mini{
+    width: 65px;
+    height: 65px;
+    background-image: url(https://source.unsplash.com/collection/160727/1600x900);
+    background-color: grey;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.heading-news-container::before{
+    position: absolute;
+    width: 15px;
+    content: "...";
+    background-color: #f44336;
+    color:#f44336;
+}
+
+.heading-news-container{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 0.5px solid #f44336;
+    margin-bottom: 8px;
+}
+
+.heading-news-container > span{
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.float-left{
+    float: left !important;
+}
+
+.float-right{
+    float: right;
+}
+
+.clear-both{
+    clear: both;
+}
+
+.popular-news{
+    height: 65px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.popular-news-text{
+    width: 75%;
+    font-weight: 300;
+    margin-left: 10px;
+    line-height: 20px;
+}
+
+.no-padding{
+    padding: 0px !important;
+}
+
+.news-block-image-huge{
+    background-image: url(https://source.unsplash.com/collection/190727);
+    background-color: grey;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 375px;
+}
+
+.news-container-highlight-news{
+    min-height: 250px !important;
+}
+
+.news-container-highlight-news{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.highlight-news-heading{
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.highlight-news-content{
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.category-news{
+    overflow: hidden;
+}
+
+.ad-container{
+    width: 100%;
+    height: 300px;
+    line-height: 300px;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    background-color: #b8b8b8;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.ad-container-wide{
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    background-color: #b8b8b8;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.content-justify{
+    text-align: justify !important;
+    font-size: 14.5px;
+    margin-top: 20px;
+}
+
+
+.author-info{
+    margin-top: 20px;
+}
+
+.author-description{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.author-name{
+    font-size: 14px; 
+    font-weight: 400;
+}
+
+.author-name::before{
+    font-size: 14px; 
+    font-weight: 400;
+    content: "By ";
+}
+
+.author-date{
+    font-size: 13.5px; 
+    font-weight: 300;
+}
+
+.author-source{
+    font-size: 12.5px;
+    font-weight: 300;
+}
+
+.author-image{
+    background-image: url('https://i.pravatar.cc/300');
+    background-color: grey;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
