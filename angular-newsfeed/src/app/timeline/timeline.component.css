@@ -70,7 +70,7 @@ body{
 }
 
 .textarea-container{
-    /*background-color: #f6f5f5;*/
+    background-color: #f8f8f8;
 }
 
 .input-button-row{
@@ -242,5 +242,23 @@ body{
 
 .font-weight-style-medium{
     font-weight: 400 !important;
+}
+
+.news-input-cut{
+    margin-top: 10px;
+    width: 74%;
+}
+
+.button-hook{
+    outline: none !important;
+}
+
+.margin-style-button{
+    margin-top: 20px;
+    margin-left: 8px;
+}
+
+.no-outline{
+    outline: none !important;
 }
 /* Home Page - END*/

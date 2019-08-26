@@ -1,0 +1,27 @@
+<div>
+  <div class="dialog-padding" mat-dialog-content>
+
+    <div class="profilePicture"></div>
+
+    <mat-form-field class="news-input">
+      <input type="email" matInput placeholder="Enter your email address" [(ngModel)]="data.email" />
+    </mat-form-field>
+
+    <mat-form-field class="news-input">
+      <input type="password" matInput placeholder="Enter your password" [(ngModel)]="data.password" />
+    </mat-form-field>
+
+    <mat-form-field *ngIf="registerForm" class="news-input">
+      <input type="password" matInput placeholder="Confirm your password" [(ngModel)]="data.confirmPassword" />
+    </mat-form-field>
+
+    <div *ngIf="!registerForm" class="register-text">Hey, not a member yet?<span (click)="toggleRegisterShow()" class="register-highlight">Register Now!</span></div>
+    <div *ngIf="registerForm" class="register-text">Back to <span (click)="toggleRegisterShow()" class="register-highlight">Sign in</span> form?</div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button *ngIf="!registerForm" mat-button mat-raised-button color="primary">Sign In</button>
+    <button *ngIf="registerForm" mat-button mat-raised-button color="primary">Register</button>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+.profilePicture{
+    background-image: url('../../assets/profile_placeholder.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+    cursor: pointer;
+}
+
+.register-card {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 22px;
+    margin-bottom: 50px;
+}
+
+.outlet-container{
+    padding-top: 200px;
+}
+
+.news-input{
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.login-placeholder{
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+}
+
+.register-text{
+    font-weight: 400;
+    color: grey;
+}
+
+.register-highlight{
+    color: lightskyblue;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.display-none{
+    display: none;
+}

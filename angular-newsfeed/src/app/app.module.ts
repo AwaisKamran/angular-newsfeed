@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { HomeComponent } from './home/home.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { NewsPageComponent } from './news-page/news-page.component';
+import { RegisterComponent } from './register/register.component';
+import { AdminPostApprovePageComponent } from './admin-post-approve-page/admin-post-approve-page.component';
 
 
 @NgModule({
@@ -27,7 +31,9 @@ import { NewsPageComponent } from './news-page/news-page.component';
     AppComponent,
     HomeComponent,
     TimelineComponent,
-    NewsPageComponent
+    NewsPageComponent,
+    RegisterComponent,
+    AdminPostApprovePageComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,9 @@ import { NewsPageComponent } from './news-page/news-page.component';
     MatSelectModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

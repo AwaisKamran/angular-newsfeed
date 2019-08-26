@@ -1,0 +1,41 @@
+<div class="outlet-container">
+    <mat-card class="register-card">
+        <mat-card-content>
+            <div *ngIf="error" class="alert alert-danger" role="alert">{{ errorMessage }}</div>
+            <div *ngIf="success" class="alert alert-success" role="alert">{{ successMessage }}</div>
+
+            <div *ngIf="registerForm" class="profilePicture" (click)="uploadImage()" ></div>
+            <input #uploader type="file" (change)="onFileSelected($event)" accept="image/*" class="display-none" />
+
+            <img *ngIf="!registerForm" class="login-placeholder" src="../../assets/logo.png" />
+
+            <mat-form-field *ngIf="registerForm" class="news-input">
+                <input type="text" matInput placeholder="Enter your name" [(ngModel)]="data.name" />
+            </mat-form-field>
+
+            <mat-form-field class="news-input">
+                <input type="email" matInput placeholder="Enter your email address" [(ngModel)]="data.email" />
+            </mat-form-field>
+
+            <mat-form-field class="news-input">
+                <input type="password" matInput placeholder="Enter your password" [(ngModel)]="data.password" />
+            </mat-form-field>
+
+            <mat-form-field *ngIf="registerForm" class="news-input">
+                <input type="password" matInput placeholder="Confirm your password"
+                    [(ngModel)]="data.confirmPassword" />
+            </mat-form-field>
+
+            <div *ngIf="!registerForm" class="register-text">Hey, not a member yet?<span (click)="toggleForm()"
+                    class="register-highlight">Register Now!</span></div>
+            <div *ngIf="registerForm" class="register-text">Back to <span (click)="toggleForm()"
+                    class="register-highlight">Login</span> form?</div>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button *ngIf="!registerForm" mat-button mat-raised-button (click)="login()" color="primary">Login</button>
+            <button *ngIf="registerForm" mat-button mat-raised-button (click)="register()" color="primary">Register</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

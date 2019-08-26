@@ -12,6 +12,7 @@ body{
     font-size: 30px;
     width: 60px;
     height: 30px;
+    cursor: pointer;
 }
 
 .toolbar-spacer {
@@ -82,11 +83,24 @@ body{
     outline: none !important;
 }
 
+.icon-hook{
+    outline: none !important;
+}
+
 .site-hook:focus{
     outline: none !important;
 }
 
 .logo-container{
     height: 70px;
+}
+
+.news-input{
+    width: 100%;
+}
+
+.dialog-padding{
+    padding: 40px;
+    overflow: hidden;
 }
 /* toolbar - END*/

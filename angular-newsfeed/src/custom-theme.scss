@@ -16,7 +16,7 @@ $angular-newsfeed-primary: mat-palette($mat-red);
 $angular-newsfeed-accent: mat-palette($mat-grey);
 
 // The warn palette is optional (defaults to red).
-$angular-newsfeed-warn: mat-palette($mat-red);
+$angular-newsfeed-warn: mat-palette($mat-orange);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $angular-newsfeed-theme: mat-light-theme($angular-newsfeed-primary, $angular-newsfeed-accent, $angular-newsfeed-warn);
