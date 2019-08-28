@@ -76,12 +76,15 @@
             <div class="clear-both"></div>
         </div>
 
-        <mat-card class="app-card news-card">
+        <div *ngIf="!posts">
+            <mat-spinner class="spinner" diameter="50" color="primary"></mat-spinner>
+        </div>
+        <mat-card class="app-card news-card" *ngFor="let post of posts">
             <div class="width-header">
                 <mat-card-header class="float-left">
-                    <div mat-card-avatar class="news-header-image"></div>
-                    <mat-card-title class="author-title">John Doe</mat-card-title>
-                    <mat-card-subtitle class="author-content">Senior media representative at Ohio</mat-card-subtitle>
+                    <div mat-card-avatar class="news-header-image" [ngStyle]="{'background-image':  'url(' + userImagePath + post.User.userId + '.jpg)' }"></div>
+                    <mat-card-title class="author-title">{{ post.User.name }}</mat-card-title>
+                    <mat-card-subtitle class="author-content">{{ post.postSource }}</mat-card-subtitle>
                     <div class="clear-both"></div>
                 </mat-card-header>
 
@@ -95,71 +98,19 @@
             </div>
 
             <div class="clear-both"></div>
-            <div class="news-image"></div><br />
+            <div class="news-image" [ngStyle]="{'background-image':  'url(' + postImagesPath + post.postId + '.jpg)' }"></div><br />
 
             <mat-card-content>
-                <div class="news-heading">US President Donald Trump has cancelled a state visit to Denmark after the
-                    nation's
-                    prime minister said Greenland was not for sale to the US.</div><br />
+                <div class="news-heading">{{ post.postTitle }}</div><br />
+                
+                <mat-chip-list aria-label="Popular Hashtags">
+                    <mat-chip *ngFor="let chip of post.Tags.split(',')" class="font-weight-style-medium">
+                        {{ chip }}
+                    </mat-chip>
+                </mat-chip-list><br/>
+
                 <div class="news-content text-justify">
-                    Danish PM Mette Frederiksen described the suggestion as "absurd" and said she hoped Mr Trump was not
-                    being
-                    serious.<br />
-                    Announcing the cancellation of his visit, Mr Trump tweeted: "Denmark is a very special country with
-                    incredible
-                    people, but based on Prime Minister Mette Frederiksen's comments, that she would have no interest in
-                    discussing
-                    the purchase of Greenland, I will be postponing our meeting scheduled in two weeks for another
-                    time...."<br />
-                    The Danish royal house also confirmed it had been informed of the cancellation, the Danish
-                    Broadcasting
-                    Corporation, DR, reported.
-                </div>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button mat-raised-button color="primary" class="font-weight-style">LIKE</button>
-                <button mat-button mat-raised-button color="accent" class="color-white font-weight-style">SHARE</button>
-            </mat-card-actions>
-        </mat-card>
-
-        <mat-card class="app-card news-card">
-            <div class="width-header">
-                <mat-card-header class="float-left">
-                    <div mat-card-avatar class="news-header-image"></div>
-                    <mat-card-title class="author-title">John Doe</mat-card-title>
-                    <mat-card-subtitle class="author-content">Senior media representative at Ohio</mat-card-subtitle>
-                    <div class="clear-both"></div>
-                </mat-card-header>
-
-                <div class="like-container float-right">
-                    <mat-icon class="toolbar-icon icon-favorite float-left" aria-hidden="false"
-                        aria-label="Example favorite icon">
-                        favorite
-                    </mat-icon>
-                    <div class="like-count float-left">31</div>
-                </div>
-            </div>
-
-            <div class="clear-both"></div>
-            <div class="news-image"></div><br />
-
-            <mat-card-content>
-                <div class="news-heading">US President Donald Trump has cancelled a state visit to Denmark after the
-                    nation's
-                    prime minister said Greenland was not for sale to the US.</div><br />
-                <div class="news-content text-justify">
-                    Danish PM Mette Frederiksen described the suggestion as "absurd" and said she hoped Mr Trump was not
-                    being
-                    serious.<br />
-                    Announcing the cancellation of his visit, Mr Trump tweeted: "Denmark is a very special country with
-                    incredible
-                    people, but based on Prime Minister Mette Frederiksen's comments, that she would have no interest in
-                    discussing
-                    the purchase of Greenland, I will be postponing our meeting scheduled in two weeks for another
-                    time...."<br />
-                    The Danish royal house also confirmed it had been informed of the cancellation, the Danish
-                    Broadcasting
-                    Corporation, DR, reported.
+                   {{ post.postContent }}
                 </div>
             </mat-card-content>
             <mat-card-actions>

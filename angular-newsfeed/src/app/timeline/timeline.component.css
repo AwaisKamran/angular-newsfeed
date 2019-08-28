@@ -230,6 +230,7 @@ body{
 .author-title{
     margin-bottom: 6px !important;
     font-weight: 400 !important;
+    font-size: 16px;
 }
 
 .author-content{
@@ -277,5 +278,11 @@ body{
     margin-top: 40px;
     border: 1px dashed #b8b8b8;
     cursor: pointer;
+}
+
+.spinner{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
 }
 /* Home Page - END*/

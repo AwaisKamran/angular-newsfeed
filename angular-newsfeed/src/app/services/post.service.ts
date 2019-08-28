@@ -17,7 +17,11 @@ export class PostService {
     return this.http.get(`${this.url}api/Category`);
   }
 
-  getTimelinePosts(){
-    return this.http.get(`${this.url}api/Post`);
+  getTimelinePosts(id){
+    return this.http.get(`${this.url}api/UserPosts/${id}`);
+  }
+
+  getCategoryPosts(){
+    return this.http.get(`${this.url}api/CategoryPosts`);
   }
 }
