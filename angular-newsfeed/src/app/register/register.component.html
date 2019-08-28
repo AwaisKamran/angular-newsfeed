@@ -4,7 +4,7 @@
             <div *ngIf="error" class="alert alert-danger" role="alert">{{ errorMessage }}</div>
             <div *ngIf="success" class="alert alert-success" role="alert">{{ successMessage }}</div>
 
-        <div *ngIf="registerForm" [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}" class="profilePicture" (click)="uploadImage()" ></div>
+            <div *ngIf="registerForm" [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}" class="profilePicture" (click)="uploadImage()" ></div>
             <input #uploader type="file" (change)="onFileSelected($event)" accept="image/*" class="display-none" />
 
             <img *ngIf="!registerForm" class="login-placeholder" src="../../assets/logo.png" />
@@ -34,8 +34,8 @@
         </mat-card-content>
 
         <mat-card-actions>
-            <button *ngIf="!registerForm" mat-button mat-raised-button (click)="login()" color="primary">Login</button>
-            <button *ngIf="registerForm" mat-button mat-raised-button (click)="register()" color="primary">Register</button>
+            <button *ngIf="!registerForm" mat-button mat-raised-button (click)="login()" color="primary" [disabled]="isLoginDisabled">Login</button>
+            <button *ngIf="registerForm" mat-button mat-raised-button (click)="register()" color="primary" [disabled]="isDisabled">Register</button>
         </mat-card-actions>
     </mat-card>
 </div>

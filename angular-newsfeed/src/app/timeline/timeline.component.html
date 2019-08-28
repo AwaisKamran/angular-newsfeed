@@ -18,32 +18,30 @@
                     </div>
                 </div>
 
+                <div [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}" class="createPostForm" (click)="uploadImage()" ></div>
+
                 <div class="news-input-field-ccontainer">
                     <mat-form-field class="news-input">
                         <mat-label>Select news category</mat-label>
-                        <mat-select>
-                            <mat-option value="media">Media</mat-option>
-                            <mat-option value="world">world</mat-option>
-                            <mat-option value="box office">box office</mat-option>
-                            <mat-option value="sports">sports</mat-option>
-                            <mat-option value="tourism">tourism</mat-option>
+                        <mat-select [(ngModel)]="data.category">
+                            <mat-option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</mat-option>
                         </mat-select>
                     </mat-form-field>
 
                     <mat-form-field class="news-input">
-                        <input matInput placeholder="Enter the news heading here" />
+                        <input matInput [(ngModel)]="data.heading" placeholder="Enter the news heading here" />
                     </mat-form-field>
 
                     <mat-form-field class="news-input">
-                        <input matInput placeholder="Enter the source of the news" />
+                        <input matInput [(ngModel)]="data.source" placeholder="Enter the source of the news" />
                     </mat-form-field>
 
                     <mat-form-field class="news-input">
-                        <input matInput placeholder="Enter the ownder of the news" />
+                        <input matInput [(ngModel)]="data.owner" placeholder="Enter the owner of the news" />
                     </mat-form-field>
 
                     <mat-form-field class="news-input">
-                        <textarea matInput class="textarea-container" rows="8" placeholder="Enter the news here"></textarea>
+                        <textarea matInput [(ngModel)]="data.news" class="textarea-container" rows="8" placeholder="Enter the news here"></textarea>
                     </mat-form-field>
 
                     <mat-form-field class="news-input-cut float-left">
@@ -66,11 +64,12 @@
                 <div class="input-button-row">
                     <div class="button-container float-right">
                         <button mat-raised-button color="primary" class="font-weight-style no-outline"
-                            matTooltip="post news">Send</button>
-                        <button class="button-margin-left no-outline" mat-icon-button matTooltip="upload a file" color="accent"
+                            matTooltip="post news" (click)="createPost()" [disabled]="isDisabled">Send</button>
+                        <button class="button-margin-left no-outline" (click)="uploadImage()" mat-icon-button matTooltip="upload a file" color="accent"
                             aria-label="Example icon-button with a attach file">
                             <mat-icon>attach_file</mat-icon>
                         </button>
+                        <input #uploader type="file" (change)="onFileSelected($event)" accept="image/*" class="display-none" />
                     </div>
                 </div>
             </mat-card>

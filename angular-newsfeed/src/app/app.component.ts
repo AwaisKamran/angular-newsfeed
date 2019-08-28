@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import {MatDialog } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { UserService } from './services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +13,16 @@ export class AppComponent {
   animal: string;
   name: string;
   currentTime = new Date().toUTCString();
-  constructor(public dialog: MatDialog){}
+
+  constructor(
+    public dialog: MatDialog,
+    private userService: UserService,
+    private router: Router
+  ){}
+
+  logout(){
+    localStorage.removeItem("userType");
+    localStorage.removeItem("userId");
+    this.router.navigate(['/register'])
+  }
 }
