@@ -82,7 +82,7 @@
         <mat-card class="app-card news-card" *ngFor="let post of posts">
             <div class="width-header">
                 <mat-card-header class="float-left">
-                    <div mat-card-avatar class="news-header-image" [ngStyle]="{'background-image':  'url(' + userImagePath + post.User.userId + '.jpg)' }"></div>
+                    <div mat-card-avatar class="news-header-image" [ngStyle]="{'background-image':  'url(' + userImagesPath + post.User.userId + '.jpg)' }"></div>
                     <mat-card-title class="author-title">{{ post.User.name }}</mat-card-title>
                     <mat-card-subtitle class="author-content">{{ post.postSource }}</mat-card-subtitle>
                     <div class="clear-both"></div>

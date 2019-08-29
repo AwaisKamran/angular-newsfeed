@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ConstantsService } from '../services/constants.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  private url = "http://localhost:56003/";
-  constructor(private http: HttpClient) { }
+  private url;
+  constructor( 
+    private http: HttpClient,
+    private constantsService: ConstantsService
+  ){
+    this.url = this.constantsService.url;
+  }
 
   createPost(fd){
     return this.http.post(`${this.url}api/Post`, fd);
@@ -23,5 +29,13 @@ export class PostService {
 
   getCategoryPosts(){
     return this.http.get(`${this.url}api/CategoryPosts`);
+  }
+
+  getPostById(id){
+    return this.http.get(`${this.url}api/Post/${id}`);
+  }
+
+  getAllPosts(){
+    return this.http.get(`${this.url}api/Post/`);
   }
 }

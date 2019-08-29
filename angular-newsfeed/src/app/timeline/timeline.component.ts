@@ -1,5 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
+import { ConstantsService } from '../services/constants.service';
 
 @Component({
   selector: 'app-timeline',
@@ -26,11 +27,14 @@ export class TimelineComponent implements OnInit{
   private errorMessage: string = "Error! Please fill in all the fields.";
   private success: boolean = false;
   private successMessage: string = "Congratulations! your news is posted successfully.";
-  private postImagesPath = 'http://localhost:56003/Images/Post/'
-  private userImagePath = 'http://localhost:56003/Images/User/'
+  private postImagesPath = this.constantsService.postImagesPath; 
+  private userImagesPath = this.constantsService.userImagesPath; 
   @ViewChild('uploader', { static: false }) fileUploader;
 
-  constructor(private postService: PostService) { }
+  constructor(
+    private postService: PostService,
+    private constantsService: ConstantsService,
+  ) { }
 
   ngOnInit(): void {
     this.getCategories();

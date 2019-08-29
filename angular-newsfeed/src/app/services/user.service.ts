@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ConstantsService } from '../services/constants.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private url = "http://localhost:56003/";
+  private url;
+
   public loggedIn: boolean;
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private constantsService: ConstantsService
+  ) {
     if(localStorage.getItem("userId")) this.loggedIn = true;
     else this.loggedIn = false;
+
+    this.url = this.constantsService.url;
   }
 
   registerUser(userData) {

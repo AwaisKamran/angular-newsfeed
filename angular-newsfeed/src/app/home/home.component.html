@@ -2,14 +2,15 @@
     <div class="news-outer-container row">
         <section class="news-container-section col-lg-8">
             <div class="top-news-container">
-                <div class="heading-news-container"><span>Latest News</span></div><br/>
+                <div class="heading-news-container"><span>Latest News</span></div><br />
                 <div *ngIf="!categories">
                     <mat-spinner class="spinner" diameter="50" color="primary"></mat-spinner>
                 </div>
 
                 <div class="news-container row">
                     <div class="news-block col-lg-4 col-sm-12" *ngFor="let post of latestNews; let i = index;">
-                        <div class="news-block-image" [ngStyle]="{'background-image': 'url('+ postImagesPath + post.postId +'.jpg)'}"></div>
+                        <div class="news-block-image"
+                            [ngStyle]="{'background-image': 'url('+ postImagesPath + post.postId +'.jpg)'}"></div>
                         <div class="news-block-text" (click)="navigateToNews(post.postId)">{{ post.postContent }}</div>
                     </div>
                 </div>
@@ -22,23 +23,30 @@
                         <div *ngFor="let post of category.Posts; let i = index;">
                             <div *ngIf="i === 0">
                                 <div class="news-container-highlight-news row">
-                                    <div class="news-block-image-huge col-lg-6 col-sm-12" [ngStyle]="{'background-image': 'url('+ postImagesPath + post.postId +'.jpg)'}"></div>
+                                    <div class="news-block-image-huge col-lg-6 col-sm-12"
+                                        [ngStyle]="{'background-image': 'url('+ postImagesPath + post.postId +'.jpg)'}">
+                                    </div>
                                     <div class="news-block-huge-text-section col-lg-6 col-sm-12">
-                                        <div class="highlight-news-heading" (click)="navigateToNews(post.postId)">{{ post.postTitle }}
+                                        <div class="highlight-news-heading" (click)="navigateToNews(post.postId)">
+                                            {{ post.postTitle }}
                                         </div>
                                         <div class="highlight-news-content">{{ post.postContent }}</div>
                                         <div class="read-more" (click)="navigateToNews(post.postId)">Read More</div>
                                     </div>
                                 </div>
                                 <div class="news-container row">
-                                    <div class="news-block col-lg-3 col-sm-12" *ngFor="let categoryPosts of category.Posts| slice: 1; let j = index;">
-                                        <div class="news-block-image" [ngStyle]="{'background-image': 'url('+ postImagesPath + categoryPosts.postId +'.jpg)'}"></div>
-                                        <div class="news-block-text" (click)="navigateToNews(categoryPosts.postId)">{{ categoryPosts.postTitle }}</div>
+                                    <div class="news-block col-lg-3 col-sm-12"
+                                        *ngFor="let categoryPosts of category.Posts| slice: 1; let j = index;">
+                                        <div class="news-block-image"
+                                            [ngStyle]="{'background-image': 'url('+ postImagesPath + categoryPosts.postId +'.jpg)'}">
+                                        </div>
+                                        <div class="news-block-text" (click)="navigateToNews(categoryPosts.postId)">
+                                            {{ categoryPosts.postTitle }}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -48,67 +56,29 @@
             <section class="popular-news-section">
                 <div class="heading-news-container"><span>Popular News</span></div>
                 <div class="news-container">
-                    <div class="popular-news">
-                        <div class="news-block-image-mini float-left"></div>
-                        <div class="popular-news-text float-left">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div *ngIf="!popularNews">
+                        <br />
+                        <mat-spinner class="spinner" diameter="25" color="primary"></mat-spinner>
                     </div>
-
-                    <div class="popular-news">
-                        <div class="news-block-image-mini float-left"></div>
-                        <div class="popular-news-text float-left">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    </div>
-
-
-                    <div class="popular-news">
-                        <div class="news-block-image-mini float-left"></div>
-                        <div class="popular-news-text float-left">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    </div>
-
-
-                    <div class="popular-news">
-                        <div class="news-block-image-mini float-left"></div>
-                        <div class="popular-news-text float-left">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div class="popular-news" *ngFor="let news of popularNews">
+                        <div class="news-block-image-mini float-left"
+                        [ngStyle]="{'background-image': 'url('+ postImagesPath + news.postId +'.jpg)'}"></div>
+                        <div class="popular-news-text float-left">{{ news.postContent }}</div>
                     </div>
                 </div>
-            </section>
+            </section><br/>
 
             <section class="popular-news-section">
                 <div class="heading-news-container"><span>Older News</span></div>
                 <div class="news-container">
-                    <div class="popular-news">
-                        <div class="old-block-image-mini float-left"></div>
-                        <div class="popular-news-text float-left">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            e
-                        </div>
+                    <div *ngIf="!oldNews">
+                        <br />
+                        <mat-spinner class="spinner" diameter="25" color="primary"></mat-spinner>
                     </div>
-
-                    <div class="popular-news">
-                        <div class="old-block-image-mini float-left"></div>
-                        <div class="popular-news-text float-left">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            e
-                        </div>
-                    </div>
-                    <div class="popular-news">
-                        <div class="old-block-image-mini float-left"></div>
-                        <div class="popular-news-text float-left">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            e
-                        </div>
-                    </div>
-                    <div class="popular-news">
-                        <div class="old-block-image-mini float-left"></div>
-                        <div class="popular-news-text float-left">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            e
-                        </div>
-                    </div>
-                    <div class="popular-news">
-                        <div class="old-block-image-mini float-left"></div>
-                        <div class="popular-news-text float-left">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            e
-                        </div>
+                    <div class="popular-news" *ngFor="let news of oldNews">
+                        <div class="old-block-image-mini float-left"
+                        [ngStyle]="{'background-image': 'url('+ postImagesPath + news.postId +'.jpg)'}"></div>
+                        <div class="popular-news-text float-left">{{ news.postContent }}</div>
                     </div>
                 </div>
             </section>
