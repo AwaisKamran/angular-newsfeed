@@ -38,4 +38,12 @@ export class PostService {
   getAllPosts(){
     return this.http.get(`${this.url}api/Post/`);
   }
+
+  getUnApprovedPosts(){
+    return this.http.get(`${this.url}api/PostApproval`);
+  }
+
+  approvePost(id){
+    return this.http.put(`${this.url}api/PostApproval/${id}`, {});
+  }
 }

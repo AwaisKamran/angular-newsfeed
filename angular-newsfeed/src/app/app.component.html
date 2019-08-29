@@ -2,7 +2,8 @@
   <mat-toolbar-row class="site-list">
     <div routerLink="/home" class="site-hook">Home</div>
     <div *ngIf="userService.loggedIn" routerLink="/timeline" class="site-hook">Timeline</div>
-    <div routerLink="/news/1" class="site-hook">News</div>
+    <div *ngIf="userService.userType" routerLink="/admin" class="site-hook">Admin</div>
+    <!-- <div routerLink="/news/1" class="site-hook">News</div> -->
     <div class="site-hook">Category Page</div>
     <div class="site-hook">Contact</div>
   </mat-toolbar-row>

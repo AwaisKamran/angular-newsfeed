@@ -1,0 +1,30 @@
+.outlet-container{
+    padding-top: 200px;
+}
+
+.background-green{
+    background-color: green !important;
+}
+
+.spinner{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+.app-card {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bottom-padding{
+    margin-bottom: 4%;
+}
+
+
+.news-heading{
+    font-size: 16.5px;
+    font-weight: 400;
+}

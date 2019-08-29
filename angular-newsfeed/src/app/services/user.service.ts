@@ -9,6 +9,8 @@ export class UserService {
   private url;
 
   public loggedIn: boolean;
+  public userType: boolean;
+  
   constructor(
     private http: HttpClient,
     private constantsService: ConstantsService
@@ -16,6 +18,7 @@ export class UserService {
     if(localStorage.getItem("userId")) this.loggedIn = true;
     else this.loggedIn = false;
 
+    this.userType = localStorage.getItem("userType") === "admin"? true: false;
     this.url = this.constantsService.url;
   }
 

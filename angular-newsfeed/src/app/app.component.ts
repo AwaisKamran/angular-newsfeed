@@ -24,5 +24,8 @@ export class AppComponent {
     localStorage.removeItem("userType");
     localStorage.removeItem("userId");
     this.router.navigate(['/register'])
+    .then(() => {
+      window.location.reload();
+    });
   }
 }

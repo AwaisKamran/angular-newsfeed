@@ -1,1 +1,34 @@
-<p>admin-post-approve-page works!</p>
+<div class="outlet-container">
+    <div *ngIf="showLoader">
+        <mat-spinner class="spinner" diameter="30" color="primary"></mat-spinner>
+    </div>
+    
+    <div *ngIf="error" class="app-card alert alert-danger" role="alert">{{ errorMessage }}</div>
+    <div *ngIf="success" class="app-card alert alert-success" role="alert">{{ successMessage }}</div>
+
+    <mat-card class="app-card news-card bottom-padding" *ngFor="let post of posts">
+        <div class="clear-both"></div>
+        <div class="news-image" [ngStyle]="{'background-image':  'url(' + postImagesPath + post.postId + '.jpg)' }">
+        </div><br />
+
+        <mat-card-content>
+            <div class="news-heading">{{ post.postTitle }}</div><br />
+
+            <mat-chip-list aria-label="Popular Hashtags">
+                <mat-chip *ngFor="let chip of post.Tags.split(',')" class="font-weight-style-medium">
+                    {{ chip }}
+                </mat-chip>
+            </mat-chip-list><br />
+
+            <div class="news-content text-justify">
+                {{ post.postContent }}
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button mat-raised-button color="primary"
+                class="font-weight-style background-green" (click)="approvePost(post.postId)">Approve</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <div *ngIf="noDataAvailable" class="app-card alert alert-secondary" role="alert">No post available to approve.</div>
+</div>

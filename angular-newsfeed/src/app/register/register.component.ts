@@ -63,6 +63,7 @@ export class RegisterComponent {
           localStorage.setItem("userId", res.data.userId);
 
           if(res.data.type === "user") this.router.navigate(['/timeline'])
+          if(res.data.type === "admin") this.router.navigate(['/admin'])
         }, (err: any) => {
           this.success = false;
           this.error = true;
