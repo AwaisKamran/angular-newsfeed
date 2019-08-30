@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../services/post.service';
 import { ConstantsService } from '../services/constants.service';
 
@@ -9,17 +9,18 @@ import { ConstantsService } from '../services/constants.service';
   styleUrls: ['./news-page.component.css']
 })
 export class NewsPageComponent implements OnInit {
-  private post: any = undefined;
-  private postImagesPath = this.constantsService.postImagesPath; 
-  private userImagesPath = this.constantsService.userImagesPath; 
-  private popularNews: any;
-  private oldNews: any;
+  public post: any = undefined;
+  public postImagesPath = this.constantsService.postImagesPath; 
+  public userImagesPath = this.constantsService.userImagesPath; 
+  public popularNews: any;
+  public oldNews: any;
   contentNotReceived = true;
 
   constructor(
-    private route: ActivatedRoute,
-    private postService: PostService,
-    private constantsService: ConstantsService,
+    public route: ActivatedRoute,
+    public postService: PostService,
+    public constantsService: ConstantsService,
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -52,6 +53,10 @@ export class NewsPageComponent implements OnInit {
           [a[i], a[j]] = [a[j], a[i]];
       }
       return a;
+  }
+
+  navigateToNews(id){
+    this.router.navigate([`/news/${id}`]);
   }
 
 }

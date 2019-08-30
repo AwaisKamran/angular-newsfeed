@@ -129,6 +129,7 @@
     font-weight: 300;
     margin-left: 10px;
     line-height: 20px;
+    cursor: pointer;
 }
 
 .no-padding{

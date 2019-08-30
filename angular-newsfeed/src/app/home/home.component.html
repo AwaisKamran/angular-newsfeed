@@ -63,7 +63,7 @@
                     <div class="popular-news" *ngFor="let news of popularNews">
                         <div class="news-block-image-mini float-left"
                         [ngStyle]="{'background-image': 'url('+ postImagesPath + news.postId +'.jpg)'}"></div>
-                        <div class="popular-news-text float-left">{{ news.postContent }}</div>
+                        <div class="popular-news-text float-left" (click)="navigateToNews(news.postId)">{{ news.postContent }}</div>
                     </div>
                 </div>
             </section><br/>
@@ -78,7 +78,7 @@
                     <div class="popular-news" *ngFor="let news of oldNews">
                         <div class="old-block-image-mini float-left"
                         [ngStyle]="{'background-image': 'url('+ postImagesPath + news.postId +'.jpg)'}"></div>
-                        <div class="popular-news-text float-left">{{ news.postContent }}</div>
+                        <div class="popular-news-text float-left" (click)="navigateToNews(news.postId)">{{ news.postContent }}</div>
                     </div>
                 </div>
             </section>

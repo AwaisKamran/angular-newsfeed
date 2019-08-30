@@ -25,6 +25,8 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { NewsPageComponent } from './news-page/news-page.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminPostApprovePageComponent } from './admin-post-approve-page/admin-post-approve-page.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { AdminPostApprovePageComponent } from './admin-post-approve-page/admin-p
     TimelineComponent,
     NewsPageComponent,
     RegisterComponent,
-    AdminPostApprovePageComponent
+    AdminPostApprovePageComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,7 @@ import { AdminPostApprovePageComponent } from './admin-post-approve-page/admin-p
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

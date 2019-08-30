@@ -7,10 +7,10 @@ import { ConstantsService } from '../services/constants.service';
 })
 export class PostService {
 
-  private url;
+  public url;
   constructor( 
-    private http: HttpClient,
-    private constantsService: ConstantsService
+    public http: HttpClient,
+    public constantsService: ConstantsService
   ){
     this.url = this.constantsService.url;
   }
@@ -45,5 +45,9 @@ export class PostService {
 
   approvePost(id){
     return this.http.put(`${this.url}api/PostApproval/${id}`, {});
+  }
+
+  editPost(id, data){
+    return this.http.put(`${this.url}api/Post/${id}`, data);
   }
 }

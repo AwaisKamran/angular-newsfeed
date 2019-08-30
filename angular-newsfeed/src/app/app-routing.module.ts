@@ -5,6 +5,8 @@ import { TimelineComponent } from '../app/timeline/timeline.component';
 import { NewsPageComponent } from '../app/news-page/news-page.component';
 import { RegisterComponent } from '../app/register/register.component';
 import { AdminPostApprovePageComponent } from './admin-post-approve-page/admin-post-approve-page.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
+
 
 
 const routes: Routes = [
@@ -13,7 +15,8 @@ const routes: Routes = [
   { path: 'timeline', component: TimelineComponent },
   { path: 'news/:id', component: NewsPageComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin', component: AdminPostApprovePageComponent }
+  { path: 'admin', component: AdminPostApprovePageComponent },
+  { path: 'editPost/:id', component: EditPostComponent }
 ];
 
 @NgModule({

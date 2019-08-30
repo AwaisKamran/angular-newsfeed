@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  private data: any = {
+  public data: any = {
     name: undefined,
     email: undefined,
     password: undefined,
@@ -16,21 +16,21 @@ export class RegisterComponent {
     ipAddress: undefined
    };
 
-  private registerForm: boolean = false;
-  private error: boolean = false;
-  private errorMessage: string = "Error! Please fill in all the fields.";
-  private success: boolean = false;
-  private successMessage: string = "Congratulations! you have registered successfully.";
-  private selectedFile: File = null;
-  private imageUrl: any = "../../assets/profile_placeholder.jpg";
-  private isDisabled: boolean = false;
-  private isLoginDisabled: boolean = false;
+  public registerForm: boolean = false;
+  public error: boolean = false;
+  public errorMessage: string = "Error! Please fill in all the fields.";
+  public success: boolean = false;
+  public successMessage: string = "Congratulations! you have registered successfully.";
+  public selectedFile: File = null;
+  public imageUrl: any = "../../assets/profile_placeholder.jpg";
+  public isDisabled: boolean = false;
+  public isLoginDisabled: boolean = false;
 
   @ViewChild('uploader', { static: false }) fileUploader;
 
   constructor(
-    private userService: UserService,
-    private router: Router
+    public userService: UserService,
+    public router: Router
   ) { }
 
   toggleForm(){

@@ -9,16 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private categories: any;
-  private latestNews: any;
-  private popularNews: any;
-  private oldNews: any;
-  private postImagesPath = this.constantsService.postImagesPath;
+  public categories: any;
+  public latestNews: any;
+  public popularNews: any;
+  public oldNews: any;
+  public postImagesPath = this.constantsService.postImagesPath;
   
   constructor(
-    private postService: PostService,
-    private constantsService: ConstantsService,
-    private router: Router
+    public postService: PostService,
+    public constantsService: ConstantsService,
+    public router: Router
   ) { }
 
   ngOnInit() {

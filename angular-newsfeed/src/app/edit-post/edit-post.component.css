@@ -1,0 +1,45 @@
+.outlet-container{
+    padding-top: 200px;
+}
+
+
+.app-card {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-input-field-ccontainer{
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.news-input{
+    width: 100%;
+}
+
+
+.input-button-row{
+    height: 35px;
+    margin-top: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.float-right{
+    float: right;
+}
+
+.font-weight-style{
+    font-weight: 300 !important;
+}
+
+.no-outline{
+    outline: none !important;
+}
+
+.input-card-hello-text{
+    font-size: 22px;
+    color: #8c8787;
+    margin-left: 15px;
+}

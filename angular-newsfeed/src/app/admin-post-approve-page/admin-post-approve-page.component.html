@@ -12,7 +12,7 @@
         </div><br />
 
         <mat-card-content>
-            <div class="news-heading">{{ post.postTitle }}</div><br />
+            <div class="news-heading" (click)="navigateToEditPostPage(post.postId)">{{ post.postTitle }}</div><br />
 
             <mat-chip-list aria-label="Popular Hashtags">
                 <mat-chip *ngFor="let chip of post.Tags.split(',')" class="font-weight-style-medium">

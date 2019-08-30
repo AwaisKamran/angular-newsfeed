@@ -6,14 +6,14 @@ import { ConstantsService } from '../services/constants.service';
   providedIn: 'root'
 })
 export class UserService {
-  private url;
+  public url;
 
   public loggedIn: boolean;
   public userType: boolean;
   
   constructor(
-    private http: HttpClient,
-    private constantsService: ConstantsService
+    public http: HttpClient,
+    public constantsService: ConstantsService
   ) {
     if(localStorage.getItem("userId")) this.loggedIn = true;
     else this.loggedIn = false;

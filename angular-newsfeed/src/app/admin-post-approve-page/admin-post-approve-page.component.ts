@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
 import { ConstantsService } from '../services/constants.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-post-approve-page',
@@ -8,19 +9,20 @@ import { ConstantsService } from '../services/constants.service';
   styleUrls: ['./admin-post-approve-page.component.css']
 })
 export class AdminPostApprovePageComponent implements OnInit {
-  private posts: any;
-  private noDataAvailable: boolean = false;
-  private showLoader: boolean = true;
-  private postImagesPath = this.constantsService.postImagesPath; 
-  private userImagesPath = this.constantsService.userImagesPath; 
-  private error: boolean = false;
-  private errorMessage: string = "Error! Please try again.";
-  private success: boolean = false;
-  private successMessage: string = "Success! Post Approved successfully!";
+  public posts: any;
+  public noDataAvailable: boolean = false;
+  public showLoader: boolean = true;
+  public postImagesPath = this.constantsService.postImagesPath; 
+  public userImagesPath = this.constantsService.userImagesPath; 
+  public error: boolean = false;
+  public errorMessage: string = "Error! Please try again.";
+  public success: boolean = false;
+  public successMessage: string = "Success! Post Approved successfully!";
 
   constructor(
-    private postService: PostService,
-    private constantsService: ConstantsService
+    public postService: PostService,
+    public constantsService: ConstantsService,
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -55,5 +57,9 @@ export class AdminPostApprovePageComponent implements OnInit {
       this.success = false;
       this.error = true;
     });
+  }
+
+  navigateToEditPostPage(id){
+    this.router.navigate([`/editPost/${id}`])
   }
 }

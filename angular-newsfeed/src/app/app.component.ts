@@ -16,8 +16,8 @@ export class AppComponent {
 
   constructor(
     public dialog: MatDialog,
-    private userService: UserService,
-    private router: Router
+    public userService: UserService,
+    public router: Router
   ){}
 
   logout(){

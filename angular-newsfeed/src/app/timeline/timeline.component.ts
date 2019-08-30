@@ -8,7 +8,7 @@ import { ConstantsService } from '../services/constants.service';
   styleUrls: ['./timeline.component.css']
 })
 export class TimelineComponent implements OnInit{
-  private data = {
+  public data = {
     heading: undefined,
     source: undefined,
     owner: undefined,
@@ -16,24 +16,24 @@ export class TimelineComponent implements OnInit{
     tag: undefined,
     category: undefined
   };
-  private selectedFile: File = null;
-  private isDisabled = false;
-  private imageUrl: any = "../../assets/placeholder-post.png";
-  private categories: any;
-  private posts: any;
-  private tags: string[] = [];
-  private currentTime = new Date().toUTCString();
-  private error: boolean = false;
-  private errorMessage: string = "Error! Please fill in all the fields.";
-  private success: boolean = false;
-  private successMessage: string = "Congratulations! your news is posted successfully.";
-  private postImagesPath = this.constantsService.postImagesPath; 
-  private userImagesPath = this.constantsService.userImagesPath; 
+  public selectedFile: File = null;
+  public isDisabled = false;
+  public imageUrl: any = "../../assets/placeholder-post.png";
+  public categories: any;
+  public posts: any;
+  public tags: string[] = [];
+  public currentTime = new Date().toUTCString();
+  public error: boolean = false;
+  public errorMessage: string = "Error! Please fill in all the fields.";
+  public success: boolean = false;
+  public successMessage: string = "Congratulations! your news is posted successfully.";
+  public postImagesPath = this.constantsService.postImagesPath; 
+  public userImagesPath = this.constantsService.userImagesPath; 
   @ViewChild('uploader', { static: false }) fileUploader;
 
   constructor(
-    private postService: PostService,
-    private constantsService: ConstantsService,
+    public postService: PostService,
+    public constantsService: ConstantsService,
   ) { }
 
   ngOnInit(): void {

@@ -28,3 +28,8 @@
     font-size: 16.5px;
     font-weight: 400;
 }
+
+.news-heading:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
