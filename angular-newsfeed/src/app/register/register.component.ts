@@ -62,8 +62,13 @@ export class RegisterComponent {
           localStorage.setItem("userType", res.data.type);
           localStorage.setItem("userId", res.data.userId);
 
-          if(res.data.type === "user") this.router.navigate(['/timeline'])
-          if(res.data.type === "admin") this.router.navigate(['/admin'])
+          if(res.data.type === "user") this.router.navigate(['/timeline']).then(() => {
+            window.location.reload();
+          });
+          
+          if(res.data.type === "admin") this.router.navigate(['/admin']).then(() => {
+            window.location.reload();
+          });
         }, (err: any) => {
           this.success = false;
           this.error = true;

@@ -11,7 +11,7 @@
                     <div class="news-block col-lg-4 col-sm-12" *ngFor="let post of latestNews; let i = index;">
                         <div class="news-block-image"
                             [ngStyle]="{'background-image': 'url('+ postImagesPath + post.postId +'.jpg)'}"></div>
-                        <div class="news-block-text" (click)="navigateToNews(post.postId)">{{ post.postContent }}</div>
+                        <div class="news-block-text" (click)="navigateToNews(post.postId, post.postTitle)">{{ post.postContent }}</div>
                     </div>
                 </div>
             </div>
@@ -27,11 +27,11 @@
                                         [ngStyle]="{'background-image': 'url('+ postImagesPath + post.postId +'.jpg)'}">
                                     </div>
                                     <div class="news-block-huge-text-section col-lg-6 col-sm-12">
-                                        <div class="highlight-news-heading" (click)="navigateToNews(post.postId)">
+                                        <div class="highlight-news-heading" (click)="navigateToNews(post.postId, post.postTitle)">
                                             {{ post.postTitle }}
                                         </div>
                                         <div class="highlight-news-content">{{ post.postContent }}</div>
-                                        <div class="read-more" (click)="navigateToNews(post.postId)">Read More</div>
+                                        <div class="read-more" (click)="navigateToNews(post.postId, post.postTitle)">Read More</div>
                                     </div>
                                 </div>
                                 <div class="news-container row">
@@ -40,7 +40,7 @@
                                         <div class="news-block-image"
                                             [ngStyle]="{'background-image': 'url('+ postImagesPath + categoryPosts.postId +'.jpg)'}">
                                         </div>
-                                        <div class="news-block-text" (click)="navigateToNews(categoryPosts.postId)">
+                                        <div class="news-block-text" (click)="navigateToNews(categoryPosts.postId, categoryPosts.postTitle)">
                                             {{ categoryPosts.postTitle }}</div>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                     <div class="popular-news" *ngFor="let news of popularNews">
                         <div class="news-block-image-mini float-left"
                         [ngStyle]="{'background-image': 'url('+ postImagesPath + news.postId +'.jpg)'}"></div>
-                        <div class="popular-news-text float-left" (click)="navigateToNews(news.postId)">{{ news.postContent }}</div>
+                        <div class="popular-news-text float-left" (click)="navigateToNews(news.postId, news.postTitle)">{{ news.postContent }}</div>
                     </div>
                 </div>
             </section><br/>
@@ -78,7 +78,7 @@
                     <div class="popular-news" *ngFor="let news of oldNews">
                         <div class="old-block-image-mini float-left"
                         [ngStyle]="{'background-image': 'url('+ postImagesPath + news.postId +'.jpg)'}"></div>
-                        <div class="popular-news-text float-left" (click)="navigateToNews(news.postId)">{{ news.postContent }}</div>
+                        <div class="popular-news-text float-left" (click)="navigateToNews(news.postId, news.postTitle)">{{ news.postContent }}</div>
                     </div>
                 </div>
             </section>

@@ -52,7 +52,8 @@ export class HomeComponent implements OnInit {
       return a;
   }
 
-  navigateToNews(id){
-    this.router.navigate([`/news/${id}`]);
+  navigateToNews(id, postHeading){
+    let slug = postHeading.replace(/[^\w\s]/gi, '').trim().toLowerCase().split(' ').splice(0,4).join('-');
+    this.router.navigate([`/news/${id}/${slug}`]);
   }
 }

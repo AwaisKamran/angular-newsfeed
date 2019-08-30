@@ -24,8 +24,10 @@ export class NewsPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.getPostById(id);
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      this.getPostById(id);
+    });
     this.getPosts();
   }
 
@@ -55,8 +57,9 @@ export class NewsPageComponent implements OnInit {
       return a;
   }
 
-  navigateToNews(id){
-    this.router.navigate([`/news/${id}`]);
+  navigateToNews(id, postHeading){
+    let slug = postHeading.replace(/[^\w\s]/gi, '').trim().toLowerCase().split(' ').splice(0,4).join('-');;
+    this.router.navigate([`/news/${id}/${slug}`]);
   }
 
 }

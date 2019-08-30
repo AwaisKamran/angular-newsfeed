@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'timeline', component: TimelineComponent },
-  { path: 'news/:id', component: NewsPageComponent },
+  { path: 'news/:id/:slug', component: NewsPageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'admin', component: AdminPostApprovePageComponent },
   { path: 'editPost/:id', component: EditPostComponent }
