@@ -1,10 +1,10 @@
 <mat-toolbar color="primary" class="toolbar">
   <mat-toolbar-row class="site-list">
     <div routerLink="/home" class="site-hook">Home</div>
-    <div *ngIf="userService.loggedIn && !userService.userType" routerLink="/timeline" class="site-hook">Add News</div>
+    <div *ngIf="userService.loggedIn && !userService.userType" routerLink="/timeline" class="site-hook">Your news</div>
     <div *ngIf="userService.userType" routerLink="/admin" class="site-hook">Admin</div>
     <!-- <div routerLink="/news/1" class="site-hook">News</div> -->
-    <div class="site-hook">Category Page</div>
+    <div class="site-hook" routerLink="/category">Category Page</div>
     <div class="site-hook">Contact</div>
   </mat-toolbar-row>
 
@@ -24,16 +24,9 @@
   </mat-toolbar-row>
 
   <mat-toolbar-row class="anchor-list">
-    <div class="anchor-hook">Women</div>
-    <div class="anchor-hook">Technology</div>
-    <div class="anchor-hook">Gallery</div>
-    <div class="anchor-hook">Recipes</div>
-    <div class="anchor-hook">Social Media</div>
-    <div class="anchor-hook">Agriculture</div>
-    <div class="anchor-hook">Astrology</div>
-    <div class="anchor-hook">Automobile</div>
-    <div class="anchor-hook">Matrimonial</div>
-    <div class="anchor-hook">Property</div>
+    <div class="anchor-hook" *ngFor="let item of categories" (click)="fetchCategories(item.categoryName)">
+        {{ item.categoryName }}
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 

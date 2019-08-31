@@ -1,0 +1,22 @@
+<div class="news-input-container">
+    <mat-card class="app-card card-padding">
+        <div *ngIf="error" class="alert alert-danger" role="alert">{{ errorMessage }}</div>
+        <div *ngIf="success" class="alert alert-success" role="alert">{{ successMessage }}</div>
+
+        <div class="news-input-field-container">
+            <mat-form-field class="news-input">
+                <input matInput [(ngModel)]="categoryName" placeholder="Enter Category Name here" />
+            </mat-form-field>
+        </div>
+
+        <div class="input-button-row no-padding">
+            <button mat-raised-button 
+                color="primary" 
+                class="font-weight-style no-outline news-input"
+                matTooltip="post news" 
+                (click)="postCategory()"
+            >Send</button>
+        </div>
+    </mat-card>
+    <div class="clear-both"></div>
+</div>

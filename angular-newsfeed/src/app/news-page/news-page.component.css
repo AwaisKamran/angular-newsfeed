@@ -10,6 +10,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
+    cursor: pointer;
 }
 
 .popular-news > .old-block-image-mini{
@@ -20,6 +21,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
+    cursor: pointer;
 }
 .heading-news-container::before{
     position: absolute;
@@ -71,6 +73,7 @@
     margin-left: 10px;
     line-height: 20px;
     cursor: pointer;
+    font-size: 14.5px;
 }
 
 .no-padding{
@@ -192,4 +195,20 @@
 
 .news-tags-margin-styles{
     margin-left: -15px;
+}
+
+.popular-news-author-info{
+    height: 22px;
+}
+
+.author-name{
+    font-size: 12.5px;
+}
+
+.author-name::before{
+    content: 'By '
+}
+
+.post-date{
+    font-size: 12.5px;
 }

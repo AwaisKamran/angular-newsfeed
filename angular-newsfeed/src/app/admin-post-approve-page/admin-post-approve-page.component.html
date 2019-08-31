@@ -1,8 +1,10 @@
 <div class="outlet-container">
+    <app-create-category></app-create-category>
+
     <div *ngIf="showLoader">
         <mat-spinner class="spinner" diameter="30" color="primary"></mat-spinner>
     </div>
-    
+
     <div *ngIf="error" class="app-card alert alert-danger" role="alert">{{ errorMessage }}</div>
     <div *ngIf="success" class="app-card alert alert-success" role="alert">{{ successMessage }}</div>
 
@@ -25,8 +27,8 @@
             </div>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button mat-raised-button color="primary"
-                class="font-weight-style background-green" (click)="approvePost(post.postId)">Approve</button>
+            <button mat-button mat-raised-button color="primary" class="font-weight-style background-green"
+                (click)="approvePost(post.postId)">Approve</button>
         </mat-card-actions>
     </mat-card>
 

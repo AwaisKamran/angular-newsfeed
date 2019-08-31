@@ -27,6 +27,9 @@ import { RegisterComponent } from './register/register.component';
 import { AdminPostApprovePageComponent } from './admin-post-approve-page/admin-post-approve-page.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CreateNewsComponent } from './create-news/create-news.component';
+import { CreateCategoryComponent } from './create-category/create-category.component';
+import { CategoryComponent } from './category/category.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     NewsPageComponent,
     RegisterComponent,
     AdminPostApprovePageComponent,
-    EditPostComponent
+    EditPostComponent,
+    CreateNewsComponent,
+    CreateCategoryComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +63,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MatToolbarModule,
     MatTooltipModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

@@ -1,43 +1,25 @@
 <div class="outlet-container container">
     <div class="news-outer-container row">
         <section class="news-container-section col-lg-8">
-            <div class="category-news">
-                <div class="heading-news-container"><span>{{ post.postTitle }}</span></div>
-
-                <div class="news-container-highlight-news">
-                    <div class="news-block-image-huge col-lg-12 col-sm-12"
-                        [ngStyle]="{'background-image': 'url('+ postImagesPath + post.postId +'.jpg)'}"></div>
-                    <div class="news-block-huge-text-section col-lg-12 col-sm-12">
-                        <div class="author-info row">
-                            <div class="author-image float-left"
-                                [ngStyle]="{'background-image': 'url('+ userImagesPath + post.User.userId +'.jpg)'}">
-                            </div>
-                            <div class="author-description float-left">
-                                <div class="author-name">{{ post.User.name }}</div>
-                                <div class="author-source">{{ post.postSource }}</div>
-                                <div class="author-date">{{ post.postCreated | date }}</div>
-                            </div>
-                        </div><br />
-
-                        <div class="news-tags-margin-styles">
-                            <mat-chip-list aria-label="Popular Hashtags">
-                                <mat-chip *ngFor="let chip of post.Tags.split(',')" class="font-weight-style-medium">
-                                    {{ chip }}
-                                </mat-chip>
-                            </mat-chip-list>
+            <div *ngIf="!categories">
+                <mat-spinner class="spinner" diameter="50" color="primary"></mat-spinner>
+            </div>
+            <div *ngFor="let category of categories">
+                <div class="heading-news-container"><span>{{ category.categoryName }}</span></div>
+                <div class="news-container row">
+                    <div *ngIf="category.Posts.length === 0" class="full-width alert alert-secondary" role="alert">No
+                        data available.</div>
+                    <div class="news-block col-lg-3 col-sm-12 col-xs-12" *ngFor="let categoryPosts of category.Posts;">
+                        <div class="news-block-image"
+                            [ngStyle]="{'background-image': 'url('+ postImagesPath + categoryPosts.postId +'.jpg)'}">
                         </div>
-
-
-                        <div class="highlight-news-content content-justify" [innerHTML]="post.postContent">
-                        </div>
-
-                        <div *ngIf="contentNotReceived">
-                            <mat-spinner class="spinner" diameter="50" color="primary"></mat-spinner>
+                        <div class="news-block-text"
+                            (click)="navigateToNews(categoryPosts.postId, categoryPosts.postTitle)">
+                            {{ categoryPosts.postTitle }}
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="ad-container-wide">Banner 730 x 200</div>
         </section>
 
         <section class="aside-section col-lg-4">
@@ -61,6 +43,7 @@
                                     <div class="post-date">{{ news.postCreated | date: 'shortDate' }}</div>
                                 </div>
                             </div>
+
                             {{ news.postContent }}
                         </div>
                     </div>

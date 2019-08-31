@@ -34,8 +34,8 @@
         </mat-card-content>
 
         <mat-card-actions>
-            <button *ngIf="!registerForm" mat-button mat-raised-button (click)="login()" color="primary" [disabled]="isLoginDisabled">Login</button>
-            <button *ngIf="registerForm" mat-button mat-raised-button (click)="register()" color="primary" [disabled]="isDisabled">Register</button>
+            <button *ngIf="!registerForm" mat-button mat-raised-button (click)="login()" color="primary">Login</button>
+            <button *ngIf="registerForm" mat-button mat-raised-button (click)="register()" color="primary">Register</button>
         </mat-card-actions>
     </mat-card>
 </div>

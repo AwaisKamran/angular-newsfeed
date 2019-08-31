@@ -1,0 +1,203 @@
+.category-news{
+    overflow: hidden;
+}
+
+.heading-news-container::before{
+    position: absolute;
+    width: 15px;
+    content: "...";
+    background-color: #f44336;
+    color:#f44336;
+}
+
+.heading-news-container{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 0.5px solid #f44336;
+    margin-bottom: 8px;
+}
+
+.heading-news-container > span{
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.news-container-highlight-news{
+    min-height: 250px !important;
+}
+
+.news-block-image-huge{
+    background-image: url(https://source.unsplash.com/collection/190727);
+    background-color: grey;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 250px;
+}
+
+.highlight-news-heading{
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.highlight-news-heading:hover{
+    text-decoration: underline;
+    text-decoration-color: rgb(33, 37, 41);
+}
+
+.highlight-news-content{
+    font-weight: 300;
+    font-size: 14px;
+    height: 102px;
+    overflow: hidden;
+}
+
+.read-more{
+    background-color: #f44336;
+    color: white;
+    font-weight: 300;
+    padding: 4px;
+    width: max-content;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.outlet-container{
+    padding-top: 200px;
+}
+
+.news-outer-container{   
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.ad-container{
+    width: 100%;
+    height: 300px;
+    line-height: 300px;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    background-color: #b8b8b8;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.news-block{
+    width: 215px;
+    height: 275px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.news-block > .news-block-image{
+    width: 100%;
+    height: 170px;
+    background-image: url(https://source.unsplash.com/random);
+    background-color: grey;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.popular-news > .news-block-image-mini{
+    width: 65px;
+    height: 65px;
+    background-image: url(https://source.unsplash.com/user/erondu/1600x900);
+    background-color: grey;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    cursor: pointer;
+}
+
+.popular-news > .old-block-image-mini{
+    width: 65px;
+    height: 65px;
+    background-image: url(https://source.unsplash.com/collection/160727/1600x900);
+    background-color: grey;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    cursor: pointer;
+}
+
+.news-block > .news-block-text{
+    font-weight: 300;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.news-block > .news-block-text:hover{
+    text-decoration: underline;
+    text-decoration-color: grey;
+    cursor: pointer;
+}
+
+.news-block > .news-block-text::after{
+    content: "...";
+}
+
+.popular-news-text{
+    width: 75%;
+    font-weight: 300;
+    margin-left: 10px;
+    line-height: 20px;
+    cursor: pointer;
+    font-size: 14.5px;
+}
+
+.float-left{
+    float: left !important;
+}
+
+.float-right{
+    float: right;
+}
+
+.clear-both{
+    clear: both;
+}
+
+.popular-news{
+    height: 65px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.full-width{
+    margin-top:25px;
+    width:100%;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.spinner{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.popular-news-author-info{
+    height: 22px;
+}
+
+.author-name{
+    font-weight: 400;
+    font-size: 12.5px;
+}
+
+.author-name::before{
+    content: 'By '
+}
+
+.post-date{
+    font-size: 12.5px;
+}

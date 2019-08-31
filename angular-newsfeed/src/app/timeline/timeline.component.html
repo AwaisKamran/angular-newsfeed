@@ -1,84 +1,11 @@
 <div class="outlet-container">
     <div class="news-container">
-        <div class="news-input-container">
-            <mat-card class="app-card input-card">
-                <div *ngIf="error" class="alert alert-danger" role="alert">{{ errorMessage }}</div>
-                <div *ngIf="success" class="alert alert-success" role="alert">{{ successMessage }}</div>
-
-                <div class="input-card-hello-text">
-                    <span class="welcome font-weight-style">Hello User! Whats hot today?</span>
-                    <div class="time-container">
-                        <div class="float-left">
-                            <mat-icon class="toolbar-icon icon-time font-weight-style" aria-hidden="false"
-                                aria-label="Example account icon">
-                                query_builder
-                            </mat-icon>
-                        </div>
-                        <div class="time float-left font-weight-style">{{ currentTime }}</div>
-                    </div>
-                </div>
-
-                <div [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}" class="createPostForm" (click)="uploadImage()" ></div>
-
-                <div class="news-input-field-ccontainer">
-                    <mat-form-field class="news-input">
-                        <mat-label>Select news category</mat-label>
-                        <mat-select [(ngModel)]="data.category">
-                            <mat-option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-
-                    <mat-form-field class="news-input">
-                        <input matInput [(ngModel)]="data.heading" placeholder="Enter the news heading here" />
-                    </mat-form-field>
-
-                    <mat-form-field class="news-input">
-                        <input matInput [(ngModel)]="data.source" placeholder="Enter the source of the news" />
-                    </mat-form-field>
-
-                    <mat-form-field class="news-input">
-                        <input matInput [(ngModel)]="data.owner" placeholder="Enter the owner of the news" />
-                    </mat-form-field>
-
-                    <mat-form-field class="news-input">
-                        <textarea matInput [(ngModel)]="data.news" class="textarea-container" rows="8" placeholder="Enter the news here"></textarea>
-                    </mat-form-field>
-
-                    <mat-form-field class="news-input-cut float-left">
-                        <input [(ngModel)]="data.tag" matInput placeholder="Enter the tags" />
-                    </mat-form-field>
-                    <button mat-button mat-stroked-button color="primary" (click)="addTags()"
-                        class="button-hook float-left margin-style-button">Tag it</button>
-
-                    <div class="clear-both"></div>
-                </div>
-
-                <div class="input-hashtag-row">
-                    <div class="float-left">
-                        <mat-chip-list aria-label="Popular Hashtags">
-                            <mat-chip *ngFor="let chip of tags" class="font-weight-style-medium">{{ chip }}</mat-chip>
-                        </mat-chip-list>
-                    </div>
-                </div>
-
-                <div class="input-button-row">
-                    <div class="button-container float-right">
-                        <button mat-raised-button color="primary" class="font-weight-style no-outline"
-                            matTooltip="post news" (click)="createPost()" [disabled]="isDisabled">Send</button>
-                        <button class="button-margin-left no-outline" (click)="uploadImage()" mat-icon-button matTooltip="upload a file" color="accent"
-                            aria-label="Example icon-button with a attach file">
-                            <mat-icon>attach_file</mat-icon>
-                        </button>
-                        <input #uploader type="file" (change)="onFileSelected($event)" accept="image/*" class="display-none" />
-                    </div>
-                </div>
-            </mat-card>
-            <div class="clear-both"></div>
-        </div>
-
+        <app-create-news></app-create-news>
         <div *ngIf="!posts">
             <mat-spinner class="spinner" diameter="50" color="primary"></mat-spinner>
         </div>
+        <div *ngIf="noDataAvailable" class="app-card alert alert-secondary" role="alert">No data available.</div>
+    
         <mat-card class="app-card news-card" *ngFor="let post of posts">
             <div class="width-header">
                 <mat-card-header class="float-left">
@@ -98,10 +25,10 @@
             </div>
 
             <div class="clear-both"></div>
-            <div class="news-image" [ngStyle]="{'background-image':  'url(' + postImagesPath + post.postId + '.jpg)' }"></div><br />
+            <div (click)="navigateToNews(post.postId, post.postTitle)" class="news-image" [ngStyle]="{'background-image':  'url(' + postImagesPath + post.postId + '.jpg)' }"></div><br />
 
             <mat-card-content>
-                <div class="news-heading">{{ post.postTitle }}</div><br />
+                <div class="news-heading" (click)="navigateToNews(post.postId, post.postTitle)">{{ post.postTitle }}</div><br />
                 
                 <mat-chip-list aria-label="Popular Hashtags">
                     <mat-chip *ngFor="let chip of post.Tags.split(',')" class="font-weight-style-medium">
@@ -109,9 +36,9 @@
                     </mat-chip>
                 </mat-chip-list><br/>
 
-                <div class="news-content text-justify">
-                   {{ post.postContent }}
+                <div class="news-content text-justify" [innerHtml]="post.postContent">
                 </div>
+                
             </mat-card-content>
             <mat-card-actions>
                 <button mat-button mat-raised-button color="primary" class="font-weight-style">LIKE</button>
